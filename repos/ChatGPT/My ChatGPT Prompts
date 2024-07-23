@@ -1,0 +1,47 @@
+In JavaScript, a class is a blueprint for creating objects with shared properties and methods. It provides a way to encapsulate data and behavior in a single construct. Classes in JavaScript are introduced in ECMAScript 6 (ES6) and offer a more straightforward and structured way to create objects compared to the older prototype-based approach.
+
+Here is a basic example of a JavaScript class // Define a class named 'Person'
+class Person {
+  // Constructor method to initialize new objects
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  // Method to display the person's details
+  greet() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+  }
+}
+
+// Create an instance of the Person class
+const person1 = new Person('Alice', 30);
+
+// Call the greet method on the instance
+person1.greet(); // Output: Hello, my name is Alice and I am 30 years old.
+Key Components of a JavaScript Class
+Class Declaration: Using the class keyword followed by the class name. By convention, class names are written in PascalCase (e.g., Person).
+Constructor Method: A special method called constructor is used for creating and initializing objects created with the class. It can accept parameters to set initial values.
+Methods: Functions defined within the class that can be called on instances of the class. Methods do not need the function keyword.
+Instantiation: Creating an instance of the class using the new keyword.
+Inheritance
+Classes in JavaScript also support inheritance, allowing one class to extend another and inherit its properties and methods.// Define a subclass named 'Student' that extends the 'Person' class
+class Student extends Person {
+  constructor(name, age, grade) {
+    super(name, age); // Call the constructor of the parent class
+    this.grade = grade;
+  }
+
+  // Method specific to the Student class
+  study() {
+    console.log(`${this.name} is studying and is in grade ${this.grade}.`);
+  }
+}
+
+// Create an instance of the Student class
+const student1 = new Student('Bob', 20, 'A');
+
+// Call methods from both the Person and Student classes
+student1.greet(); // Output: Hello, my name is Bob and I am 20 years old.
+student1.study(); // Output: Bob is studying and is in grade A.
+In this example, the Student class extends the Person class, inheriting its properties and methods while also adding its own. The super keyword is used to call the constructor of the parent class.
